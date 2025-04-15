@@ -60,7 +60,9 @@ public class Course {
     public void updateMoneyEarned() {
         this.money_earned += this.price;
     }
-
+    public void enrollStudent() {
+        this.money_earned += this.price;
+    }
     // representacion en string del curso
 
     @Override

@@ -1,4 +1,4 @@
-
+import java.util.UUID;
 
 public class Student {
     // Private member variables
@@ -68,7 +68,7 @@ public class Student {
         this.course = course;
         if (course != null) {
             // Update the money earned by this course based on its price
-            course.setMoneyEarned(course.getMoneyEarned() + course.getPrice());
+            course.setMoney_earned(course.getMoney_earned() + course.getPrice());
         }
     }
 

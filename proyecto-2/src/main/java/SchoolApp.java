@@ -153,7 +153,7 @@ public class SchoolApp {
     }
 
     private static void showProfit() {
-        double totalEarned = courses.values().stream().mapToDouble(Course::getMoneyEarned).sum();
+        double totalEarned = courses.values().stream().mapToDouble(Course::getMoney_earned).sum();
         double totalSalaries = teachers.values().stream().mapToDouble(Teacher::getSalary).sum();
         double profit = totalEarned - totalSalaries;
         System.out.println("Total Profit: " + profit);
