@@ -1,5 +1,7 @@
 import java.util.*;
 // aplicacion final
+
+
 public class SchoolApp {
     private static final Scanner scanner = new Scanner(System.in);
     private static final Map<String, Teacher> teachers = new HashMap<>();
@@ -15,14 +17,83 @@ public class SchoolApp {
         createCourses();
         createStudents();
 
-        String command;
-        System.out.println("\nEnter commands (type EXIT to quit):");
         while (true) {
-            System.out.print("> ");
-            command = scanner.nextLine().trim();
-            if (command.equalsIgnoreCase("EXIT")) break;
-            handleCommand(command);
+            showMenu();
+            System.out.print("Choose an option (0 to exit): ");
+            String input = scanner.nextLine().trim();
+            switch (input) {
+                case "1":
+                    System.out.println("Enroll a student into a course");
+                    enrollOption();
+                    break;
+                case "2":
+                    System.out.println("Assign a teacher to a course");
+                    assignOption();
+                    break;
+                case "3":
+                    System.out.println("All courses:");
+                    showCourses();
+                    break;
+                case "4":
+                    System.out.print("Enter Course ID: ");
+                    lookupCourse(scanner.nextLine());
+                    break;
+                case "5":
+                    System.out.println("All students:");
+                    showStudents();
+                    break;
+                case "6":
+                    System.out.print("Enter Student ID: ");
+                    lookupStudent(scanner.nextLine());
+                    break;
+                case "7":
+                    System.out.println("All teachers:");
+                    showTeachers();
+                    break;
+                case "8":
+                    System.out.print("Enter Teacher ID: ");
+                    lookupTeacher(scanner.nextLine());
+                    break;
+                case "9":
+                    showProfit();
+                    break;
+                case "0":
+                    System.out.println("Exiting program. Goodbye!");
+                    return;
+                default:
+                    System.out.println("Invalid option. Please enter a number from 0 to 9.");
+            }
         }
+    }
+
+    private static void showMenu() {
+        System.out.println("\n===== SCHOOL MENU =====");
+        System.out.println("1. Enroll a student into a course");
+        System.out.println("2. Assign a teacher to a course");
+        System.out.println("3. Show all courses");
+        System.out.println("4. Show details of a specific course");
+        System.out.println("5. Show all students");
+        System.out.println("6. Show details of a specific student");
+        System.out.println("7. Show all teachers");
+        System.out.println("8. Show details of a specific teacher");
+        System.out.println("9. Show total profit");
+        System.out.println("0. Exit");
+    }
+
+    private static void enrollOption() {
+        System.out.print("Enter Student ID: ");
+        String studentId = scanner.nextLine();
+        System.out.print("Enter Course ID: ");
+        String courseId = scanner.nextLine();
+        enrollStudent(studentId, courseId);
+    }
+
+    private static void assignOption() {
+        System.out.print("Enter Teacher ID: ");
+        String teacherId = scanner.nextLine();
+        System.out.print("Enter Course ID: ");
+        String courseId = scanner.nextLine();
+        assignTeacher(teacherId, courseId);
     }
 
     private static void createTeachers() {
@@ -66,39 +137,6 @@ public class SchoolApp {
             Student s = new Student(name, address, email);
             students.put(s.getStudentId(), s);
             System.out.println("Created: " + s);
-        }
-    }
-
-    private static void handleCommand(String input) {
-        try {
-            String[] tokens = input.split(" ");
-            switch (tokens[0].toUpperCase()) {
-                case "ENROLL":
-                    enrollStudent(tokens[1], tokens[2]);
-                    break;
-                case "ASSIGN":
-                    assignTeacher(tokens[1], tokens[2]);
-                    break;
-                case "SHOW":
-                    switch (tokens[1].toUpperCase()) {
-                        case "COURSES": showCourses(); break;
-                        case "STUDENTS": showStudents(); break;
-                        case "TEACHERS": showTeachers(); break;
-                        case "PROFIT": showProfit(); break;
-                    }
-                    break;
-                case "LOOKUP":
-                    switch (tokens[1].toUpperCase()) {
-                        case "COURSE": lookupCourse(tokens[2]); break;
-                        case "STUDENT": lookupStudent(tokens[2]); break;
-                        case "TEACHER": lookupTeacher(tokens[2]); break;
-                    }
-                    break;
-                default:
-                    System.out.println("Invalid command.");
-            }
-        } catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
         }
     }
 
@@ -158,18 +196,4 @@ public class SchoolApp {
         double profit = totalEarned - totalSalaries;
         System.out.println("Total Profit: " + profit);
     }
-    private static void showMenu() {
-        System.out.println("\nAvailable Commands:");
-        System.out.println("ENROLL [STUDENT_ID] [COURSE_ID]     - Enroll a student into a course");
-        System.out.println("ASSIGN [TEACHER_ID] [COURSE_ID]     - Assign a teacher to a course");
-        System.out.println("SHOW COURSES                        - Display all courses");
-        System.out.println("LOOKUP COURSE [COURSE_ID]           - Show details of a specific course");
-        System.out.println("SHOW STUDENTS                       - Display all students");
-        System.out.println("LOOKUP STUDENT [STUDENT_ID]         - Show details of a specific student");
-        System.out.println("SHOW TEACHERS                       - Display all teachers");
-        System.out.println("LOOKUP TEACHER [TEACHER_ID]         - Show details of a specific teacher");
-        System.out.println("SHOW PROFIT                         - Show total school profit");
-        System.out.println("EXIT                                - Exit the program\n");
-    }
-
 }
