@@ -33,6 +33,6 @@ public class Teacher {
 
     @Override
     public String toString() {
-        return "ID: " + teacherId + ", Nombre: " + name + ", Salario: " + salary;
+        return "ID: " + teacherId + ", Nombre: " + name + ", Salary: " + salary;
     }
 }
