@@ -158,4 +158,18 @@ public class SchoolApp {
         double profit = totalEarned - totalSalaries;
         System.out.println("Total Profit: " + profit);
     }
+    private static void showMenu() {
+        System.out.println("\nAvailable Commands:");
+        System.out.println("ENROLL [STUDENT_ID] [COURSE_ID]     - Enroll a student into a course");
+        System.out.println("ASSIGN [TEACHER_ID] [COURSE_ID]     - Assign a teacher to a course");
+        System.out.println("SHOW COURSES                        - Display all courses");
+        System.out.println("LOOKUP COURSE [COURSE_ID]           - Show details of a specific course");
+        System.out.println("SHOW STUDENTS                       - Display all students");
+        System.out.println("LOOKUP STUDENT [STUDENT_ID]         - Show details of a specific student");
+        System.out.println("SHOW TEACHERS                       - Display all teachers");
+        System.out.println("LOOKUP TEACHER [TEACHER_ID]         - Show details of a specific teacher");
+        System.out.println("SHOW PROFIT                         - Show total school profit");
+        System.out.println("EXIT                                - Exit the program\n");
+    }
+
 }
