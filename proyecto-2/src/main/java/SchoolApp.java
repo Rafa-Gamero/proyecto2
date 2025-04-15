@@ -1,5 +1,5 @@
 import java.util.*;
-
+// aplicacion
 public class SchoolApp {
     private static final Scanner scanner = new Scanner(System.in);
     private static final Map<String, Teacher> teachers = new HashMap<>();
