@@ -1,30 +1,121 @@
-# 🎓 School Management Console App
+# 🏫 School Management System | Java Console App
 
-Una aplicación de consola escrita en **Java** que permite gestionar una escuela: cursos, profesores y estudiantes. Desde el terminal, podrás matricular alumnos, asignar profesores, consultar detalles y calcular beneficios.
+## 📘 Introduction
+
+This is a **Java-based console application** that helps manage students, teachers, and courses through a simple command-line interface. It allows enrollment, assignments, and financial calculations.
+
+<br>
+
+## 💡 Features
+
+- Interactive menu with numerical options
+- Create and manage:
+  - 👨‍🏫 Teachers
+  - 🎓 Students
+  - 📚 Courses
+- Assign teachers to courses
+- Enroll students into courses
+- Calculate total profit based on course revenue and teacher salaries
+
+<br>
+
+## 🧱 Classes
+
+### 📘 Teacher
+
+- `teacherId`: `String` (auto-generated)
+- `name`: `String`
+- `salary`: `double`
+- Constructor: `(name, salary)`
+- Getters and Setters
+
+<br>
+
+### 📗 Course
+
+- `courseId`: `String` (auto-generated)
+- `name`: `String`
+- `price`: `double`
+- `money_earned`: `double`
+- `teacher`: `Teacher` (nullable)
+- Constructor: `(name, price)`
+- Getters and Setters
+
+<br>
+
+### 📕 Student
+
+- `studentId`: `String` (auto-generated)
+- `name`: `String`
+- `address`: `String`
+- `email`: `String`
+- `course`: `Course` (nullable)
+- Constructor: `(name, address, email)`
+- Getters and Setters
+
+<br>
+
+## 🛠️ How it Works
+
+1. Prompt for the school name
+2. Enter number of teachers and their details
+3. Enter number of courses and their details
+4. Enter number of students and their details
+5. Display a menu of actions to interact with the system
+
+> All IDs are auto-generated and unique.
+
+<br>
+
+## 🧪 Commands (Number-Based Menu)
+
+| # | Command | Description |
+|--|---------|-------------|
+| 1 | `ENROLL [STUDENT_ID] [COURSE_ID]` | Enroll a student into a course |
+| 2 | `ASSIGN [TEACHER_ID] [COURSE_ID]` | Assign a teacher to a course |
+| 3 | `SHOW COURSES` | Display all courses |
+| 4 | `LOOKUP COURSE [COURSE_ID]` | Show a specific course |
+| 5 | `SHOW STUDENTS` | Display all students |
+| 6 | `LOOKUP STUDENT [STUDENT_ID]` | Show a specific student |
+| 7 | `SHOW TEACHERS` | Display all teachers |
+| 8 | `LOOKUP TEACHER [TEACHER_ID]` | Show a specific teacher |
+| 9 | `SHOW PROFIT` | Calculate total profit |
+| 0 | `EXIT` | Exit the application |
+
+<br>
+
+## 🧮 Profit Calculation
+
+`Profit = Total money earned from courses - Total teacher salaries`
+
+<br>
+
+## ✅ Requirements
+
+1. Command-line menu via standard input/output.
+2. Create unit tests for all methods except basic getters/setters.
+3. Proper exception handling.
+4. Dynamic ID generation for each class.
+5. Command parsing and execution.
+
+<br>
+
+## ⭐ Bonus Ideas
+
+- `SHOW STUDENTS [COURSE_ID]`
+- `SHOW MONEY EARNED`
+- `SHOW MONEY SPENT`
+
+<br>
+
+## 📝 Notes
+
+- Write clean, organized, and readable code.
+- Include clear comments and method documentation.
+- All logic separated by class responsibility.
+- README must be complete and visually clear.
 
 ---
 
-## 📋 Características
-
-✨ Gestión completa desde consola  
-📌 Generación automática de IDs (`S1000`, `T500`, `C2000`)  
-👩‍🏫 Asignación de profesores a cursos  
-🧑‍🎓 Matriculación de estudiantes  
-📚 Visualización y consulta de entidades  
-💰 Cálculo automático de beneficios del centro
-
----
-
-## 🛠️ Tecnologías
-
-- 🔹 Java 17+
-- 🔹 Java Collections (`HashMap`)
-- 🔹 Scanner para entrada de usuario
-- 🔹 JUnit 4 (opcional)
-
----
-
-## 🗂️ Estructura
-
-📁 src/ ├── 📄 Course.java ├── 📄 Student.java ├── 📄 Teacher.java ├── 📄 SchoolApp.java ├── 📄 Main.java └── 📄 README.md
+👨‍💻 _Built with Java, OOP principles, and console interaction for a smooth learning experience._
 
