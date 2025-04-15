@@ -1,22 +1,30 @@
-🎓 School Management Console App
-Una aplicación de consola escrita en Java que permite gestionar una escuela con estudiantes, profesores y cursos. Se puede asignar profesores a cursos, matricular estudiantes, mostrar información detallada y calcular los beneficios del centro educativo.
+# 🎓 School Management Console App
 
-🧩 Características principales
-✅ Creación de profesores, cursos y estudiantes desde la consola.
+Una aplicación de consola escrita en **Java** que permite gestionar una escuela: cursos, profesores y estudiantes. Desde el terminal, podrás matricular alumnos, asignar profesores, consultar detalles y calcular beneficios.
 
-✅ Comandos para:
+---
 
-Matricular estudiantes en cursos.
+## 📋 Características
 
-Asignar profesores a cursos.
+✨ Gestión completa desde consola  
+📌 Generación automática de IDs (`S1000`, `T500`, `C2000`)  
+👩‍🏫 Asignación de profesores a cursos  
+🧑‍🎓 Matriculación de estudiantes  
+📚 Visualización y consulta de entidades  
+💰 Cálculo automático de beneficios del centro
 
-Mostrar información de cursos, estudiantes y profesores.
+---
 
-Consultar detalles específicos mediante ID.
+## 🛠️ Tecnologías
 
-Calcular los beneficios del centro: ingresos totales por cursos menos salarios de profesores.
+- 🔹 Java 17+
+- 🔹 Java Collections (`HashMap`)
+- 🔹 Scanner para entrada de usuario
+- 🔹 JUnit 4 (opcional)
 
-✅ Generación automática de IDs únicos con prefijos personalizados (S1000, T500, C2000, etc.).
+---
 
-✅ Menú interactivo basado en selección por número.
+## 🗂️ Estructura
+
+📁 src/ ├── 📄 Course.java ├── 📄 Student.java ├── 📄 Teacher.java ├── 📄 SchoolApp.java ├── 📄 Main.java └── 📄 README.md
 
