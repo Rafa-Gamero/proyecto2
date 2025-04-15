@@ -1,3 +1,5 @@
+import java.util.UUID;
+
 public class Course {
     private String courseId;
     private String name;
