@@ -1,9 +1,10 @@
+import java.util.UUID;
 public class Course {
     private String courseId;
     private String name;
     private double price;
     private double money_earned;
-    private Profesor teacher;
+    private Teacher teacher;
 
     // constructor crear nuevo curso
 
@@ -15,7 +16,7 @@ public class Course {
         this.teacher = null; //  no hay profesor asignado al principio
     }
 
-    // Getters - Setters
+    // Getters - Setters__
 
     public String getCourseId() {
         return courseId;
@@ -45,11 +46,11 @@ public class Course {
         this.money_earned = money_earned;
     }
 
-    public Profesor getTeacher() {
+    public Teacher getTeacher() {
         return teacher;
     }
 
-    public void setTeacher(Profesor teacher) {
+    public void setTeacher(Teacher teacher) {
         this.teacher = teacher;
     }
 
@@ -67,9 +68,6 @@ public class Course {
                 ", Precio: " + price + ", Dinero ganado: " + money_earned +
                 ", Profesor: " + (teacher != null ? teacher.getName() : "No asignado") + "]";
     }
+
 }
 
-
-
-    }
-}
