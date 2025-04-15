@@ -2,7 +2,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-    public class CursoTest {
+    public class CourseTest {
 
         private Course curso;
         private final String NOMBRE_CURSO = "Programación Java";
@@ -50,8 +50,8 @@ import static org.junit.jupiter.api.Assertions.*;
             assertEquals(expectedString, curso.toString());
 
             // Asignar un profesor y verificar que el toString se actualice
-            Profesor profesor = new Profesor("Juan Pérez", 2500.0);
-            curso.setTeacher(profesor);
+            Teacher teacher = new Teacher("Juan Pérez", 2500.0);
+            curso.setTeacher(teacher);
 
             expectedString = "Curso [ID: " + curso.getCourseId() +
                     ", Nombre: " + NOMBRE_CURSO +
@@ -61,4 +61,3 @@ import static org.junit.jupiter.api.Assertions.*;
             assertEquals(expectedString, curso.toString());
         }
     }
-}
